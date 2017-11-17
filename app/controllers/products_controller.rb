@@ -33,6 +33,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product.destroy
+    redirect_to root_path
+  end
+
   private
   def product_params
     params.require(:product).permit(:name, :cost, :country_of_origin)

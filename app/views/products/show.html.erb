@@ -3,5 +3,7 @@
 <p>Country of origin <%= @product.country_of_origin %></p>
 
 <%= link_to 'Edit Product', edit_product_path %>
+<%= link_to 'Delete Product', product_path(@product),
+              method: :delete, data: {confirm: 'Are you sure?'} %>
 <br>
 <%= link_to "Home", root_path %>
