@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :list
+  resources :products
   root 'products#index'
 end
