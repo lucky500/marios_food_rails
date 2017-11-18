@@ -6,4 +6,15 @@
 <%= link_to 'Delete Product', product_path(@product),
               method: :delete, data: {confirm: 'Are you sure?'} %>
 <br>
+<div class="row">
+  <div class="col-md-12">
+    <div class="reviews">
+      <h3>Reviews</h3>
+      <%= render @product.reviews %>
+      <div>
+        <%= link_to "Add Reviews", new_product_review_path(@product), class: "btn-custom" %>
+      </div>
+    </div>
+  </div>
+</div>
 <%= link_to "Home", root_path %>

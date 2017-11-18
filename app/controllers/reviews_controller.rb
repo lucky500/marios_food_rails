@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params) #require private method, permits params
-    @review.product_id = @review.id #check if this product_id = id
+    @review.product_id = @product.id #check if this product_id = id
     if @review.save
       redirect_to product_path(@product)
     else
