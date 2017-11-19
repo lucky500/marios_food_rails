@@ -1,0 +1,19 @@
+<div class="col-md-10 col-md-offset-1">
+  <div class="edit-review-form">
+    <h3>Edit Review:</h3>
+    <%= form_for([@product, @review]) do |f| %>
+      <div id="rating-form" class="form-group">
+        <%= f.text_field :rating, placeholder: "rating",  :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :author, placeholder: "Author", :class => "form-control" %>   
+      </div>
+      <div class="form-group">
+        <%= f.text_area :content_body, placeholder: "Review", :class => "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.button :submit, class: "btn-custom2", :class => "form-control" %>
+      </div>
+    <% end %>
+  </div>
+</div>

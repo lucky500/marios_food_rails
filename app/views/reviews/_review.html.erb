@@ -2,4 +2,9 @@
   <p><%= review.rating %></p>
   <p><%= review.author %></p>
   <p class="review-comment"><%= review.content_body %></p>
+
+  <div class="links btn-group">
+    <%= link_to 'Edit Review', edit_product_review_path(review.product, review), class: "btn btn-custom" %>
+    <%= link_to 'Delete Review', product_review_path(review.product, review), method: :delete, data: {confirm: "Are you sure?" } ,class: "btn btn-custom" %>
+  </div>
 </div>
