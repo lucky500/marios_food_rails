@@ -5,3 +5,23 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Product.destroy_all
+50.times do
+  Product.create([{
+    name: Faker::Food.ingredient,
+    cost: 10,
+    country_of_origin: Faker::Address.country
+  }])
+end
+
+Review.destroy_all
+250.times do
+  Review.create([{
+    author: Faker::Name.name,
+    content_body: Faker::Lorem.paragraph(2, true, 4),
+    rating: Random.rand(1..5),
+    product_id: Random.rand(1..50)
+  }])
+end
+

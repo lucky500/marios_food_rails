@@ -1,6 +1,6 @@
 <%= form_for([@product, @product.reviews.build]) do |f| %>
   <div id="rating-form" class="form-group">
-    <%= f.text_field :rating, placeholder: "rating",  :class => "form-control" %>
+    <label>Rating</label>
   </div>
   <div class="form-group">
     <%= f.text_field :author, placeholder: "Author", :class => "form-control" %>   
@@ -12,3 +12,10 @@
     <%= f.button :submit, class: "btn-custom2", :class => "form-control" %>
   </div>
 <% end %>
+
+<script>
+  $('#rating-form').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
+</script>

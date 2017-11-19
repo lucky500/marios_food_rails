@@ -3,7 +3,7 @@
     <h3>Edit Review:</h3>
     <%= form_for([@product, @review]) do |f| %>
       <div id="rating-form" class="form-group">
-        <%= f.text_field :rating, placeholder: "rating",  :class => "form-control" %>
+        <label>Rating</label>
       </div>
       <div class="form-group">
         <%= f.text_field :author, placeholder: "Author", :class => "form-control" %>   
@@ -17,3 +17,10 @@
     <% end %>
   </div>
 </div>
+
+<script>
+  $('#rating-form').raty({
+    path: '/assets/',
+    scoreName: 'review[rating]'
+  });
+</script>

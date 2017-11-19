@@ -17,4 +17,12 @@
     </div>
   </div>
 </div>
-<%= link_to "Home", root_path %>
+<script>
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function(){
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>
