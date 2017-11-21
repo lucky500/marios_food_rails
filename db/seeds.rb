@@ -8,20 +8,25 @@
 
 Product.destroy_all
 50.times do
-  Product.create([{
+  Product.create!([{
     name: Faker::Food.ingredient,
     cost: 10,
     country_of_origin: Faker::Address.country
   }])
 end
 
+
+
 Review.destroy_all
+product_id = Product.pluck(:id)
+product_id_to_i = product_id.collect{|i| i.to_i}
 250.times do
-  Review.create([{
+  Review.create!([{
     author: Faker::Name.name,
     content_body: Faker::Lorem.paragraph(2, true, 4),
     rating: Random.rand(1..5),
-    product_id: Random.rand(1..50)
+    product_id: product_id_to_i.sample
   }])
 end
+
 
