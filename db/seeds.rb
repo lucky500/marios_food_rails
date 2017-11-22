@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Product.destroy_all
-50.times do
+70.times do
   Product.create!([{
     name: Faker::Food.ingredient,
     cost: 10,
@@ -20,7 +20,7 @@ end
 Review.destroy_all
 product_id = Product.pluck(:id)
 product_id_to_i = product_id.collect{|i| i.to_i}
-250.times do
+270.times do
   Review.create!([{
     author: Faker::Name.name,
     content_body: Faker::Lorem.paragraph(2, true, 4),

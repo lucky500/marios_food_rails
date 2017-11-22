@@ -14,6 +14,16 @@
         <div class="navbar-header">
           <%= link_to 'Products', root_path, class: "navbar-brand" %>
         </div>
+        <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Filters <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><%= link_to 'Most Recent Review', most_recent_products_path %></li>
+            <li><%= link_to 'Made in USA Products', made_in_us_products_path %></li>
+            <li><%= link_to 'Most Reviewed Product', most_reviewed_products_path %></li>
+          </ul>
+        </li>
+      </ul>
         <div class="nav navbar-nav navbar-right">
           <li><%= link_to 'Add Product', new_product_path %></li>
         </div>

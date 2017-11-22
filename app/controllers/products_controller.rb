@@ -1,6 +1,22 @@
 class ProductsController < ApplicationController
   before_action :find_product, only: [:show, :edit, :update, :destroy]
 
+  def most_recent
+    @products = Product.most_recent
+    render :index
+  end
+
+  def most_reviewed
+    @products = Product.most_reviewed
+    render :index
+  end
+
+  def made_in_us
+    @products = Product.made_in_us
+    render :index
+  end
+
+
   def index
     @products = Product.all
   end
