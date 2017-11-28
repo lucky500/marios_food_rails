@@ -1,4 +1,5 @@
 <%= form_for([@product, @product.reviews.build]) do |f| %>
+  <%= render "shared/errors", object: @product %>
   <div id="rating-form" class="form-group">
     <label>Rating</label>
   </div>
